@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proof-Carrying Data Analyst</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">✓</div>
+
+            <div>
+                <h2>Proof Analyst</h2>
+                <span>Agentic GenAI</span>
+            </div>
+        </div>
+
+        <nav>
+
+    <div class="nav-section">
+
+        <p class="nav-title">MAIN</p>
+
+        <button class="nav-item active" id="navDashboard">
+            <span>⌂</span>
+            Dashboard
+        </button>
+
+        <button class="nav-item" id="navAI">
+            <span>✦</span>
+            AI Analyst
+        </button>
+
+        <button class="nav-item" id="navAnalytics">
+            <span>▣</span>
+            Analytics
+        </button>
+
+    </div>
+
+
+    <div class="nav-section">
+
+        <p class="nav-title">DATA</p>
+
+        <button class="nav-item" id="navQuality">
+            <span>◈</span>
+            Data Quality
+        </button>
+
+        <button class="nav-item" id="navIssues">
+            <span>⚠</span>
+            Issues & Ambiguity
+        </button>
+
+        <button class="nav-item" id="navDatasets">
+            <span>▤</span>
+            Datasets
+        </button>
+
+    </div>
+
+
+    <div class="nav-section">
+
+        <p class="nav-title">EVIDENCE</p>
+
+        <button class="nav-item" id="navProof">
+            <span>✓</span>
+            Proof & Verification
+        </button>
+
+        <button class="nav-item" id="navHistory">
+            <span>◷</span>
+            Analysis History
+        </button>
+
+        <button class="nav-item" id="navReports">
+            <span>▣</span>
+            Reports
+        </button>
+
+    </div>
+
+
+    <div class="nav-section">
+
+        <p class="nav-title">SYSTEM</p>
+
+        <button class="nav-item" id="navSettings">
+            <span>⚙</span>
+            Settings
+        </button>
+
+    </div>
+
+</nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                System Online
+            </div>
+
+            <p>Proof-Carrying Data Analyst</p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div>
+                <h1>Analysis Dashboard</h1>
+                <p>Ask questions. Get answers. Verify every result.</p>
+            </div>
+
+            <button id="themeToggle" class="theme-button">
+                ☀️
+            </button>
+
+        </header>
+
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">⌁</div>
+
+                <div>
+                    <p>Total Analyses</p>
+                    <h2 id="totalAnalyses">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">✓</div>
+
+                <div>
+                    <p>Verified Answers</p>
+                    <h2 id="verifiedAnalyses">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">?</div>
+
+                <div>
+                    <p>Clarifications</p>
+                    <h2 id="clarificationAnalyses">0</h2>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">◉</div>
+
+                <div>
+                    <p>Verification Rate</p>
+                    <h2 id="verificationRate">0%</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Ask Analyst -->
+        <section class="analysis-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Ask the Data Analyst</h2>
+
+                    <p>
+                        Ask a question about your connected datasets.
+                        The system will check ambiguity and verify the answer.
+                    </p>
+                </div>
+
+                <span class="ai-badge">
+                    ✦ AI Agent
+                </span>
+
+            </div>
+
+
+            <div class="question-box">
+
+                <textarea
+                    id="questionInput"
+                    placeholder="Example: Which city generated the highest revenue?"
+                    rows="3"
+                ></textarea>
+
+                <button id="analyzeButton">
+                    <span>Analyze</span>
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+        <!-- Analytics Section -->
+<section id="analyticsSection" class="analytics-section hidden">
+
+    <div class="section-heading">
+        <div>
+            <h2>Analytics Overview</h2>
+            <p>Visual analysis of your connected transaction data.</p>
+        </div>
+
+        <span class="ai-badge">
+            📊 Live Analytics
+        </span>
+    </div>
+
+
+    <!-- Analytics Summary -->
+    <div class="analytics-summary">
+
+        <div class="analytics-card">
+            <span class="analytics-icon">💰</span>
+            <div>
+                <p>Total Revenue</p>
+                <h3 id="analyticsRevenue">INR 0</h3>
+            </div>
+        </div>
+
+        <div class="analytics-card">
+            <span class="analytics-icon">🧾</span>
+            <div>
+                <p>Total Transactions</p>
+                <h3 id="analyticsTransactions">0</h3>
+            </div>
+        </div>
+
+        <div class="analytics-card">
+            <span class="analytics-icon">👥</span>
+            <div>
+                <p>Customers</p>
+                <h3 id="analyticsCustomers">0</h3>
+            </div>
+        </div>
+
+        <div class="analytics-card">
+            <span class="analytics-icon">📦</span>
+            <div>
+                <p>Products</p>
+                <h3 id="analyticsProducts">0</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Charts -->
+    <div class="charts-grid">
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+                <div>
+                    <h3>Revenue by City</h3>
+                    <p>Revenue distribution across cities</p>
+                </div>
+            </div>
+
+            <div class="chart-placeholder" id="cityRevenueChart">
+                <div class="chart-empty">
+                    📊
+                    <p>Revenue chart will appear here</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+                <div>
+                    <h3>Revenue Trend</h3>
+                    <p>Revenue over time</p>
+                </div>
+            </div>
+
+            <div class="chart-placeholder" id="revenueTrendChart">
+                <div class="chart-empty">
+                    📈
+                    <p>Trend chart will appear here</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+                <div>
+                    <h3>Product Performance</h3>
+                    <p>Sales by product</p>
+                </div>
+            </div>
+
+            <div class="chart-placeholder" id="productChart">
+                <div class="chart-empty">
+                    📦
+                    <p>Product chart will appear here</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <div class="chart-header">
+                <div>
+                    <h3>Transaction Activity</h3>
+                    <p>Transaction volume over time</p>
+                </div>
+            </div>
+
+            <div class="chart-placeholder" id="transactionChart">
+                <div class="chart-empty">
+                    📋
+                    <p>Transaction chart will appear here</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Issues & Ambiguity Center -->
+<section id="issuesSection" class="issues-card hidden">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Issues & Ambiguity Center</h2>
+
+            <p>
+                Problems detected in the data and questions before analysis.
+            </p>
+        </div>
+
+        <span class="ai-badge">
+            🧠 AI Data Guardian
+        </span>
+
+    </div>
+
+
+    <!-- Issue Summary -->
+
+    <div class="issue-summary-grid">
+
+        <div class="issue-summary critical">
+
+            <div class="issue-summary-icon">🔴</div>
+
+            <div>
+                <p>Critical Issues</p>
+                <h3 id="criticalIssues">0</h3>
+            </div>
+
+        </div>
+
+
+        <div class="issue-summary warning">
+
+            <div class="issue-summary-icon">⚠️</div>
+
+            <div>
+                <p>Warnings</p>
+                <h3 id="warningIssues">0</h3>
+            </div>
+
+        </div>
+
+
+        <div class="issue-summary info">
+
+            <div class="issue-summary-icon">ℹ️</div>
+
+            <div>
+                <p>Ambiguities</p>
+                <h3 id="ambiguityIssues">0</h3>
+            </div>
+
+        </div>
+
+
+        <div class="issue-summary success">
+
+            <div class="issue-summary-icon">✓</div>
+
+            <div>
+                <p>Data Checks Passed</p>
+                <h3 id="passedChecks">0</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Ambiguity Impact -->
+
+    <div class="ambiguity-impact-card">
+
+        <div>
+
+            <span class="result-label">
+                AMBIGUITY IMPACT
+            </span>
+
+            <h2>Ambiguity Impact Score</h2>
+
+            <p>
+                Measures whether an unclear question could materially
+                change the numerical answer.
+            </p>
+
+        </div>
+
+
+        <div class="impact-score">
+
+            <span id="ambiguityScore">
+                0
+            </span>
+
+            <small>
+                / 10
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- Detected Issues -->
+
+    <div class="issues-list-card">
+
+        <div class="section-heading">
+
+            <div>
+
+                <h3>Detected Issues</h3>
+
+                <p>
+                    Problems identified during automatic data inspection.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="issue-list">
+
+
+            <!-- Duplicate -->
+
+            <div class="issue-row">
+
+                <div class="issue-icon danger">
+                    ⚠
+                </div>
+
+                <div class="issue-content">
+
+                    <div class="issue-title">
+
+                        <strong>Duplicate Transaction</strong>
+
+                        <span class="issue-badge danger">
+                            HIGH
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Transaction ID <strong>T008</strong> appears more
+                        than once in the transaction dataset.
+                    </p>
+
+                    <span class="issue-source">
+                        Source: transactions.csv
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Currency -->
+
+            <div class="issue-row">
+
+                <div class="issue-icon warning">
+                    $
+                </div>
+
+                <div class="issue-content">
+
+                    <div class="issue-title">
+
+                        <strong>Currency Mismatch</strong>
+
+                        <span class="issue-badge warning">
+                            HIGH
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Transaction <strong>T006</strong> is recorded in
+                        <strong>USD</strong> while other transactions use
+                        <strong>INR</strong>.
+                    </p>
+
+                    <span class="issue-source">
+                        Source: transactions.csv
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Conflicting Customer -->
+
+            <div class="issue-row">
+
+                <div class="issue-icon warning">
+                    ⚡
+                </div>
+
+                <div class="issue-content">
+
+                    <div class="issue-title">
+
+                        <strong>Conflicting Customer Record</strong>
+
+                        <span class="issue-badge warning">
+                            MEDIUM
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Customer <strong>C004</strong> has different city
+                        values across the customer datasets.
+                    </p>
+
+                    <span class="issue-source">
+                        customers.csv → Madurai |
+                        customer_master.csv → Trichy
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Ambiguous Dates -->
+
+            <div class="issue-row">
+
+                <div class="issue-icon info">
+                    📅
+                </div>
+
+                <div class="issue-content">
+
+                    <div class="issue-title">
+
+                        <strong>Ambiguous Date Format</strong>
+
+                        <span class="issue-badge info">
+                            MEDIUM
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Dates such as
+                        <strong>01/02/2026</strong>
+                        may represent different calendar interpretations
+                        depending on the date convention.
+                    </p>
+
+                    <span class="issue-source">
+                        Source: date fields
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- Data Quality -->
+<section id="dataQualitySection" class="quality-card hidden">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Data Quality Overview</h2>
+
+            <p>
+                Automatic checks performed on the connected datasets.
+            </p>
+        </div>
+
+        <span class="ai-badge">
+            ✓ Automatically Checked
+        </span>
+
+    </div>
+
+
+    <div class="quality-grid">
+
+        <div class="quality-item">
+            <span class="quality-icon">📁</span>
+            <div>
+                <p>Datasets</p>
+                <h3 id="qualityDatasets">0</h3>
+            </div>
+        </div>
+
+
+        <div class="quality-item">
+            <span class="quality-icon">📊</span>
+            <div>
+                <p>Total Rows</p>
+                <h3 id="qualityRows">0</h3>
+            </div>
+        </div>
+
+
+        <div class="quality-item warning">
+            <span class="quality-icon">⚠</span>
+            <div>
+                <p>Duplicate Rows</p>
+                <h3 id="qualityDuplicates">0</h3>
+            </div>
+        </div>
+
+
+        <div class="quality-item">
+            <span class="quality-icon">✓</span>
+            <div>
+                <p>Missing Values</p>
+                <h3 id="qualityMissing">0</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="quality-table-container">
+
+        <h3>Dataset Checks</h3>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Dataset</th>
+                    <th>Rows</th>
+                    <th>Duplicates</th>
+                    <th>Date Fields</th>
+                    <th>Currency Fields</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="qualityTable">
+
+                <tr>
+                    <td colspan="6">
+                        Loading data quality information...
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+            <section id="resultSection" class="result-card hidden">
+                <div class="result-header">
+
+                <div>
+                    <span class="result-label">ANALYSIS RESULT</span>
+                    <h2 id="resultTitle">Result</h2>
+                </div>
+
+                <span id="resultStatus" class="status-badge">
+                    Verified
+                </span>
+
+            </div>
+
+
+            <div class="result-answer">
+
+                <p>Answer</p>
+
+                <h1 id="answerText">
+                    —
+                </h1>
+
+            </div>
+
+
+            <div class="proof-box">
+
+                <div class="proof-header">
+
+                    <h3>✓ Proof & Evidence</h3>
+
+                    <span>
+                        Rerunnable
+                    </span>
+
+                </div>
+
+                <pre id="proofText"></pre>
+
+            </div>
+            <section id="resultSection" class="result-card hidden"></section>
+
+        </section>
+        <!-- ============================= -->
+<!-- DATASET EXPLORER -->
+<!-- ============================= -->
+
+<section id="datasetsSection" class="dashboard-section hidden">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Dataset Explorer</h2>
+            <p>Explore all datasets connected to the Proof Analyst.</p>
+        </div>
+
+        <span class="ai-badge">
+            📁 Connected Data
+        </span>
+
+    </div>
+
+
+    <div class="dataset-grid" id="datasetGrid">
+
+        <div class="empty-state">
+            Loading datasets...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- REPORT CENTER -->
+<!-- ============================= -->
+
+<section id="reportsSection" class="dashboard-section hidden">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Report Center</h2>
+            <p>Generate and print your complete analysis history.</p>
+        </div>
+
+        <button id="printReportButton" class="primary-button">
+            🖨 Print History Report
+        </button>
+
+    </div>
+
+
+    <div class="report-summary-grid">
+
+        <div class="report-card">
+            <p>Total Analyses</p>
+            <h2 id="reportTotal">0</h2>
+        </div>
+
+        <div class="report-card">
+            <p>Verified</p>
+            <h2 id="reportVerified">0</h2>
+        </div>
+
+        <div class="report-card">
+            <p>Clarifications</p>
+            <h2 id="reportClarifications">0</h2>
+        </div>
+
+        <div class="report-card">
+            <p>Verification Rate</p>
+            <h2 id="reportRate">0%</h2>
+        </div>
+
+    </div>
+
+
+    <div class="report-preview">
+
+        <h3>Report Preview</h3>
+
+        <p>
+            The generated report contains every question,
+            answer, verification status and timestamp.
+        </p>
+
+        <div id="reportPreviewContent">
+            No analysis history available yet.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================= -->
+<!-- SETTINGS -->
+<!-- ============================= -->
+
+<section id="settingsSection" class="dashboard-section hidden">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>System Settings</h2>
+            <p>Configure your Proof-Carrying Data Analyst.</p>
+        </div>
+
+        <span class="ai-badge">
+            ⚙ System
+        </span>
+
+    </div>
+
+
+    <div class="settings-grid">
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                🌙
+            </div>
+
+            <div class="setting-content">
+
+                <h3>Appearance</h3>
+
+                <p>
+                    Switch between light and dark dashboard themes.
+                </p>
+
+                <button
+                    id="settingsThemeButton"
+                    class="secondary-button"
+                >
+                    Toggle Theme
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                🔄
+            </div>
+
+            <div class="setting-content">
+
+                <h3>Refresh Data</h3>
+
+                <p>
+                    Reload analysis history and dataset information.
+                </p>
+
+                <button
+                    id="settingsRefreshButton"
+                    class="secondary-button"
+                >
+                    Refresh Data
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                🛡️
+            </div>
+
+            <div class="setting-content">
+
+                <h3>Verification</h3>
+
+                <p>
+                    Answers must pass the verification pipeline before
+                    being marked as verified.
+                </p>
+
+                <span class="setting-status">
+                    ✓ Verification Enabled
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="setting-card">
+
+            <div class="setting-icon">
+                💾
+            </div>
+
+            <div class="setting-content">
+
+                <h3>History Storage</h3>
+
+                <p>
+                    Analysis history is maintained using SQLite.
+                </p>
+
+                <span class="setting-status">
+                    ✓ Database Connected
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- History -->
+        <section class="history-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Recent Analyses</h2>
+
+                    <p>
+                        Previously verified and reviewed questions
+                    </p>
+                </div>
+
+                <button id="refreshHistory">
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th>Status</th>
+                            <th>Time</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="historyTable">
+
+                        <tr>
+                            <td colspan="5">
+                                No analyses yet
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Proof-Carrying Data Analyst • Every numerical answer should be backed by executable evidence.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

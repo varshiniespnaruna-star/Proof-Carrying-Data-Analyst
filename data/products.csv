@@ -1,0 +1,6 @@
+product_id,product_name,category,price,unit
+P001,Laptop,Electronics,55000,INR
+P002,Smartphone,Electronics,25000,INR
+P003,Headphones,Accessories,2000,INR
+P004,Office Chair,Furniture,8500,INR
+P005,USB Cable,Accessories,500,INR
